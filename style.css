@@ -31,6 +31,9 @@ body {
     backdrop-filter: blur(5px);
 }
 
+/*Ajout de symboles 
+https://www.toptal.com/designers/htmlarrows/symbols/
+*/
 .card:before {
     content: "\2730";
     position: absolute;
@@ -49,6 +52,12 @@ h1 {
     grid-template-columns: 20% 80%;
 }
 
+.polygon-container {
+    filter: drop-shadow(-1px 6px 3px var(--color2));
+    /* Mettre le parent en grid */
+    place-self: center left;
+  }
+
 /*
 Site pour les formes de polygone et générateurs de couleurs gradient
 https://bennettfeely.com/clippy/
@@ -58,4 +67,18 @@ https://cssgradient.io/
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     background: linear-gradient(135deg, var(--color2) 0%, var(--color1) 100%); 
     height: 100px;
+    width: 100px;
+}
+
+.polygon:after {
+    content: "Un texte";
+    position: absolute;
+    color: var(--color2);
+    background: var(--color4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(344deg);
+    width: 90px;
+    padding: 4px;
+    text-align: center;
 }
