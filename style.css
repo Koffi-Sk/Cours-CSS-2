@@ -82,3 +82,21 @@ https://cssgradient.io/
     padding: 4px;
     text-align: center;
 }
+
+p {
+    line-height: 26px; /*Interligne*/
+    margin: 20px 0;
+    /*Positionnement du paragraphe selon le nombre de ligne voulu*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; /*4 lignes voulues afficher*/
+    overflow: hidden;
+    text-align: justify;
+}
+
+/*Sélection d'un paragraphe*/
+p::selection {
+    background: var(--color2);
+    color: var(--color3);
+}
+ 
