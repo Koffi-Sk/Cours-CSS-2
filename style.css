@@ -99,4 +99,64 @@ p::selection {
     background: var(--color2);
     color: var(--color3);
 }
+
+.checkbox-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0 30px;
+}
+
+/*Traitement du checkbox*/
+input[type="checkbox"] {
+    display: none;   /*Fait disparaitre le checkbox*/
+}
+
+input[type="checkbox"]:checked + label {
+   background: var(--color2);
+   color: var(--color3);
+   transform: scale(1.1);
+   filter: brightness(120%);
+}
+
+label {
+    cursor: pointer;
+    border: 1px solid var(--color3);
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.2s;
+    user-select: none; /*Empêche de sélectionner le texte du label*/
+}
+
+/*Traitement de l'input email*/
+.e-mail {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.e-mail input {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 3px solid transparent;
+    transition: 0.3s;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--color1);
+    /*Reglage responsive*/
+    min-width: 150px;
+    width: 35%;
+    max-width: 300px;
+}
+
+/*Comportement de l'input quand on écrit dedans*/
+input[type="text"]:focus {
+    background: transparent;
+    border: 1px solid var(--color2);
+    border-radius: 150px;
+}
+
+input[type="text"]::placeholder {
+    color: var(--color2);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
  
