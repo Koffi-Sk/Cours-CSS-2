@@ -1,6 +1,6 @@
 :root {
     --color1: #ede4d0; 
-    --color2: pink;
+    --color2: teal; 
     --color3: #393b4b;
     --color4: rgba(18, 19,19);
 }
@@ -176,5 +176,30 @@ button {
 
 button:hover {
     letter-spacing: 3px;
+}
+
+button:active {
+    transform: scale(1.2);
+}
+
+button:hover + a,
+a:hover {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+a {
+    color: var(--color2);
+    text-align: center;
+    display: block;
+    /*Animation*/
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s;
+    /*text-decoration: none;*/  /*Enlève le soulignement*/
+}
+
+a:visited {
+    color: var(--color1);
 }
  
