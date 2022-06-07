@@ -44,6 +44,28 @@ https://www.toptal.com/designers/htmlarrows/symbols/
 
 h1 {
     margin-bottom: 24px;
+    position: relative;
+}
+
+/*Création d'une barre horizontal après le h1*/
+h1::after {
+    content: "";
+    position: absolute;
+    background: var(--color2);
+    height: 2px;
+    width: 100%;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    animation: h1anim 10s ease-in-out forwards;
+    transform-origin: left;
+}
+
+/*Animation*/
+@keyframes h1anim {
+    100% {
+        transform: translateX(-50%) scaleX(1);
+    }
 }
 
 /*Ajout du grid*/
