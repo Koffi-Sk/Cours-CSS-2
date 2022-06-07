@@ -126,6 +126,7 @@ p::selection {
     display: flex;
     justify-content: space-around;
     margin: 20px 0 30px;
+    perspective: 30px;  /*Ajout du perspective au parent*/
 }
 
 /*Traitement du checkbox*/
@@ -148,6 +149,39 @@ label {
     transition: 0.2s;
     user-select: none; /*Empêche de sélectionner le texte du label*/
 }
+
+/*Animation sur le premier label */
+label:first-of-type:hover {
+    animation: label1 1s infinite linear;
+}
+
+@keyframes label1{
+    50% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+/*Faire le 3D*/
+/*Animation sur le label 2 représentant le 4ième enfant de notre div checkbox-container */
+label:nth-child(4):hover {
+    animation: label2 3s infinite linear;
+}
+
+/* Ne pas oublier perspective sur le parent */
+@keyframes label2 {
+    33% {
+      transform: translateZ(30px);
+    }
+    66% {
+      transform: translateZ(-40px);
+    }
+    100% {
+      transform: translateZ(0);
+    }
+  }
 
 /*Traitement de l'input email*/
 .e-mail {
